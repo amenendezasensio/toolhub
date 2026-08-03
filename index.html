@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ToolHub - Herramientas Online Gratuitas</title>
+
+    <meta name="description" content="Más de 100 herramientas online gratuitas para estudiantes, desarrolladores y creadores.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            ToolHub
+        </div>
+
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Herramientas</a>
+            <a href="#">Categorías</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <button id="themeButton">🌙</button>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+    <span class="badge">
+        🚀 Gratis • Sin registro • Rápido
+    </span>
+
+    <h1>
+        Más de <span>100 herramientas</span><br>
+        gratuitas en un solo lugar.
+    </h1>
+
+    <p>
+        Herramientas para estudiantes, desarrolladores,
+        diseñadores y creadores de contenido.
+    </p>
+
+    <div class="searchBox">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Buscar herramienta...">
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>2</h2>
+            <p>Herramientas</p>
+        </div>
+
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Gratis</p>
+        </div>
+
+        <div class="stat">
+            <h2>⚡</h2>
+            <p>Sin registro</p>
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="categories">
+
+    <h2>Categorías</h2>
+
+    <div class="categoryGrid">
+
+        <button class="category active">🌟 Todas</button>
+        <button class="category">🔐 Seguridad</button>
+        <button class="category">📱 Utilidades</button>
+        <button class="category">🧮 Calculadoras</button>
+        <button class="category">📝 Texto</button>
+        <button class="category">🖼️ Imagen</button>
+
+    </div>
+
+</section>
+        <section class="popular">
+
+            <h2>Herramientas populares</h2>
+
+           <div class="cards" id="toolContainer"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ToolHub - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

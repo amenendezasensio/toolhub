@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador QR | ToolHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📱 Generador de Códigos QR</h1>
+
+        <p class="subtitle">
+            Escribe un enlace o un texto y genera un código QR al instante.
+        </p>
+
+        <input
+            type="text"
+            id="qrInput"
+            placeholder="https://ejemplo.com">
+
+        <button id="generateButton">
+            Generar QR
+        </button>
+
+        <div class="qrBox">
+
+            <img
+                id="qrImage"
+                alt="Código QR">
+
+        </div>
+
+        <button
+            id="downloadButton"
+            style="display:none;">
+
+            Descargar QR
+
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

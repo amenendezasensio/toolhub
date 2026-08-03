@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas | ToolHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 Generador de Contraseñas</h1>
+
+        <p class="subtitle">
+            Genera contraseñas seguras en un solo clic.
+        </p>
+
+        <div class="passwordBox">
+
+            <input
+                id="passwordOutput"
+                type="text"
+                readonly
+                placeholder="Tu contraseña aparecerá aquí">
+
+            <button id="copyButton">
+                📋 Copiar
+            </button>
+
+        </div>
+
+        <div class="options">
+
+            <label>
+                Longitud
+            </label>
+
+            <input
+                type="range"
+                min="8"
+                max="64"
+                value="16"
+                id="lengthSlider">
+
+            <span id="lengthValue">
+                16
+            </span>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="uppercase"
+                    checked>
+
+                Incluir mayúsculas
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="lowercase"
+                    checked>
+
+                Incluir minúsculas
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="numbers"
+                    checked>
+
+                Incluir números
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="symbols"
+                    checked>
+
+                Incluir símbolos
+
+            </label>
+
+        </div>
+
+        <button id="generateButton">
+
+            Generar Contraseña
+
+        </button>
+
+        <div class="strength">
+
+            Fortaleza:
+
+            <span id="strengthText">
+
+                Alta
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

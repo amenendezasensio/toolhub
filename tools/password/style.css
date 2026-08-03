@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:linear-gradient(135deg,#eef2ff,#f8fafc);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:24px;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+}
+
+h1{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:35px;
+}
+
+.passwordBox{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.passwordBox input{
+    flex:1;
+    padding:18px;
+    border:2px solid #ddd;
+    border-radius:14px;
+    font-size:18px;
+}
+
+.passwordBox button{
+    background:#4f46e5;
+    color:white;
+    border:none;
+    border-radius:14px;
+    padding:18px 25px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.passwordBox button:hover{
+    transform:translateY(-2px);
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.options label{
+    font-weight:600;
+}
+
+#lengthSlider{
+    width:100%;
+}
+
+#lengthValue{
+    font-size:24px;
+    font-weight:bold;
+    color:#4f46e5;
+}
+
+#generateButton{
+    width:100%;
+    padding:20px;
+    border:none;
+    border-radius:16px;
+    background:#4f46e5;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+
+#generateButton:hover{
+    transform:translateY(-3px);
+}
+
+.strength{
+    margin-top:25px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+#strengthText{
+    color:green;
+}
