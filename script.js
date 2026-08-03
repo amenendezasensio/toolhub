@@ -28,11 +28,11 @@ const tools = [
         category: "Texto"
     },
     {
-        name: "Calculadora de IVA",
-        description: "Calcula el IVA de cualquier precio.",
-        icon: "💶",
-        url: "#",
-        category: "Calculadoras"
+    name: "Calculadora de Porcentajes",
+    description: "Calcula porcentajes de forma rápida.",
+    icon: "📊",
+    url: "tools/percentage/index.html",
+    category: "Calculadoras"
     },
     {
         name: "Cronómetro",
