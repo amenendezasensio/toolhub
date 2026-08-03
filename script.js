@@ -14,11 +14,11 @@ const tools = [
         category: "Utilidades"
     },
     {
-        name: "Calculadora IMC",
-        description: "Calcula tu índice de masa corporal.",
-        icon: "📊",
-        url: "#",
-        category: "Calculadoras"
+    name: "Calculadora de Edad",
+    description: "Calcula tu edad exacta en años, meses y días.",
+    icon: "🎂",
+    url: "tools/age/index.html",
+    category: "Calculadoras"
     },
     {
         name: "Contador de Palabras",
