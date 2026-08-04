@@ -40,12 +40,12 @@ const tools = [
         badge: "⭐ Destacada"
     },
     {
-        name: "Cronómetro",
-        description: "Cronómetro online gratuito.",
-        icon: "⏱️",
-        url: "#",
-        category: "Utilidades",
-        badge: "🚧 Próximamente"
+    name: "Cronómetro",
+    description: "Cronómetro online gratuito.",
+    icon: "⏱️",
+    url: "tools/stopwatch/index.html",
+    category: "Utilidades",
+    badge: "⭐ Destacada"
     }
 ];
 
