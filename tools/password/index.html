@@ -11,118 +11,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>🔐 Generador de Contraseñas</h1>
+    <h1>🔐 Generador de Contraseñas</h1>
 
-        <p class="subtitle">
-            Genera contraseñas seguras en un solo clic.
-        </p>
+    <div class="passwordBox">
+        <input type="text" id="password" readonly>
+        <button id="copy" type="button">📋</button>
+    </div>
 
-        <div class="passwordBox">
+    <div class="lengthSection">
+        <label for="length">
+            Longitud:
+            <span id="lengthValue">16</span>
+        </label>
 
-            <input
-                id="passwordOutput"
-                type="text"
-                readonly
-                placeholder="Tu contraseña aparecerá aquí">
+        <input
+            type="range"
+            id="length"
+            min="4"
+            max="64"
+            value="16"
+        >
+    </div>
 
-            <button id="copyButton">
-                📋 Copiar
-            </button>
+    <div class="options">
 
-        </div>
+        <label>
+            <input type="checkbox" id="uppercase" checked>
+            Mayúsculas
+        </label>
 
-        <div class="options">
+        <label>
+            <input type="checkbox" id="lowercase" checked>
+            Minúsculas
+        </label>
 
-            <label>
-                Longitud
-            </label>
+        <label>
+            <input type="checkbox" id="numbers" checked>
+            Números
+        </label>
 
-            <input
-                type="range"
-                min="8"
-                max="64"
-                value="16"
-                id="lengthSlider">
+        <label>
+            <input type="checkbox" id="symbols" checked>
+            Símbolos
+        </label>
 
-            <span id="lengthValue">
-                16
-            </span>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="uppercase"
-                    checked>
-
-                Incluir mayúsculas
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="lowercase"
-                    checked>
-
-                Incluir minúsculas
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="numbers"
-                    checked>
-
-                Incluir números
-
-            </label>
-
-            <label>
-
-                <input
-                    type="checkbox"
-                    id="symbols"
-                    checked>
-
-                Incluir símbolos
-
-            </label>
-
-        </div>
-
-        <button id="generateButton">
-
-            Generar Contraseña
-
-        </button>
-
-        <div class="strength">
-
-            Fortaleza:
-
-            <span id="strengthText">
-
-                Alta
-
-            </span>
-
-        </div>
+        <label>
+            <input type="checkbox" id="exclude">
+            Excluir caracteres confusos
+        </label>
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="strength">
+        <div id="strengthBar"></div>
+    </div>
+
+    <p id="strengthText">Seguridad: Alta</p>
+
+    <button id="generate" type="button">
+        Generar contraseña
+    </button>
+
+    <h2>Últimas contraseñas</h2>
+
+    <ul id="history"></ul>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
