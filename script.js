@@ -102,6 +102,14 @@ const tools = [
     url: "tools/color-picker/index.html",
     category: "Diseño",
     badge: "⭐ Destacada"
+    },
+    {
+    name: "Convertidor de Texto",
+    description: "Convierte texto a mayúsculas, minúsculas y más.",
+    icon: "🔤",
+    url: "tools/text-converter/index.html",
+    category: "Texto",
+    badge: "⭐ Destacada"
     }
 ];
 
