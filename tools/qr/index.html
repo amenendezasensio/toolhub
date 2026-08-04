@@ -22,6 +22,38 @@
 
     <h1>📱 Generador QR</h1>
 
+   <div class="control">
+    <label for="type">Tipo de contenido</label>
+
+    <select id="type">
+        <option value="url">🌐 URL</option>
+        <option value="email">📧 Email</option>
+        <option value="phone">📞 Teléfono</option>
+    </select>
+</div>
+<div class="control">
+
+    <label>Color del QR</label>
+
+    <input
+        type="color"
+        id="darkColor"
+        value="#000000"
+    >
+
+</div>
+
+<div class="control">
+
+    <label>Color del fondo</label>
+
+    <input
+        type="color"
+        id="lightColor"
+        value="#ffffff"
+    >
+
+</div>
     <input
         id="text"
         type="text"
@@ -30,26 +62,15 @@
 
     <div class="controls">
 
-        <div class="control">
-            <label>Tamaño</label>
-            <input
-                id="size"
-                type="range"
-                min="150"
-                max="500"
-                value="250"
-            >
-            <span id="sizeValue">250 px</span>
-        </div>
+        
 
     </div>
 
     <div id="qr"></div>
 
     <div class="buttons">
-        <button id="generate">Generar QR</button>
-        <button id="download">Descargar PNG</button>
-    </div>
+    <button id="download">📥 Descargar PNG</button>
+</div>
 
 </div>
 

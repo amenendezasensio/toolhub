@@ -1,51 +1,62 @@
-const textInput = document.getElementById("textInput");
+const text = document.getElementById("text");
 
 const words = document.getElementById("words");
 const characters = document.getElementById("characters");
+const charactersNoSpaces = document.getElementById("charactersNoSpaces");
+const sentences = document.getElementById("sentences");
+const paragraphs = document.getElementById("paragraphs");
 const readingTime = document.getElementById("readingTime");
 
-const copyButton = document.getElementById("copyButton");
-const clearButton = document.getElementById("clearButton");
+const copyButton = document.getElementById("copy");
+const clearButton = document.getElementById("clear");
 
 function updateStats() {
 
-    const text = textInput.value;
+    const value = text.value;
 
-    characters.textContent = text.length;
-
-    const wordArray = text.trim() === ""
+    const wordArray = value.trim() === ""
         ? []
-        : text.trim().split(/\s+/);
+        : value.trim().split(/\s+/);
 
     words.textContent = wordArray.length;
 
-    const minutes = Math.max(1, Math.ceil(wordArray.length / 200));
+    characters.textContent = value.length;
 
-    readingTime.textContent = minutes + " min";
+    charactersNoSpaces.textContent = value.replace(/\s/g, "").length;
+
+    const sentenceArray = value.match(/[^.!?]+[.!?]+/g);
+    sentences.textContent = sentenceArray ? sentenceArray.length : (value.trim() ? 1 : 0);
+
+    const paragraphArray = value
+        .split(/\n\s*\n/)
+        .filter(p => p.trim() !== "");
+
+    paragraphs.textContent = paragraphArray.length;
+
+    const minutes = Math.max(1, Math.ceil(wordArray.length / 200));
+    readingTime.textContent = `${minutes} min`;
 
 }
 
-textInput.addEventListener("input", updateStats);
+text.addEventListener("input", updateStats);
 
 copyButton.addEventListener("click", async () => {
 
-    if (textInput.value === "") return;
+    if (text.value === "") return;
 
-    await navigator.clipboard.writeText(textInput.value);
+    await navigator.clipboard.writeText(text.value);
 
     copyButton.textContent = "✅ Copiado";
 
     setTimeout(() => {
-
         copyButton.textContent = "📋 Copiar";
-
     }, 1500);
 
 });
 
 clearButton.addEventListener("click", () => {
 
-    textInput.value = "";
+    text.value = "";
 
     updateStats();
 

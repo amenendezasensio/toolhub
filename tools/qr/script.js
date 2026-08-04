@@ -1,8 +1,11 @@
 const textInput = document.getElementById("text");
+const typeInput = document.getElementById("type");
+const darkColor = document.getElementById("darkColor");
+const lightColor = document.getElementById("lightColor");
 const sizeInput = document.getElementById("size");
 const sizeValue = document.getElementById("sizeValue");
 
-const generateButton = document.getElementById("generate");
+
 const downloadButton = document.getElementById("download");
 
 const qrContainer = document.getElementById("qr");
@@ -11,7 +14,26 @@ let qr = null;
 
 function generateQR() {
 
-    const text = textInput.value.trim();
+    let text = textInput.value.trim();
+
+if (text === "") {
+    qrContainer.innerHTML = "<p>Escribe un texto o un enlace.</p>";
+    return;
+}
+
+switch (typeInput.value) {
+    case "email":
+        text = "mailto:" + text;
+        break;
+
+    case "phone":
+        text = "tel:" + text;
+        break;
+
+    case "url":
+    default:
+        break;
+}
 
     qrContainer.innerHTML = "";
 
@@ -21,10 +43,12 @@ function generateQR() {
     }
 
     qr = new QRCode(qrContainer, {
-        text: text,
-        width: Number(sizeInput.value),
-        height: Number(sizeInput.value)
-    });
+    text: text,
+    width: 300,
+    height: 300,
+    colorDark: darkColor.value,
+    colorLight: lightColor.value
+});
 
 }
 
@@ -45,8 +69,30 @@ textInput.addEventListener("input", () => {
     }
 
 });
+typeInput.addEventListener("change", () => {
 
-generateButton.addEventListener("click", generateQR);
+    if (textInput.value.trim() !== "") {
+        generateQR();
+    }
+
+});
+darkColor.addEventListener("input", () => {
+
+    if (textInput.value.trim() !== "") {
+        generateQR();
+    }
+
+});
+
+lightColor.addEventListener("input", () => {
+
+    if (textInput.value.trim() !== "") {
+        generateQR();
+    }
+
+});
+
+
 
 downloadButton.addEventListener("click", () => {
 

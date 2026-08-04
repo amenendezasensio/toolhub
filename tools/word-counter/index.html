@@ -16,49 +16,57 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>📝 Contador de Palabras</h1>
+    <h1>📝 Contador de Palabras</h1>
 
-        <p class="subtitle">
-            Escribe o pega un texto y obtén estadísticas al instante.
-        </p>
+    <textarea
+        id="text"
+        placeholder="Escribe o pega aquí tu texto..."
+    ></textarea>
 
-        <textarea
-            id="textInput"
-            placeholder="Empieza a escribir aquí..."></textarea>
+    <div class="stats">
 
-        <div class="stats">
-
-            <div class="card">
-                <h2 id="words">0</h2>
-                <p>Palabras</p>
-            </div>
-
-            <div class="card">
-                <h2 id="characters">0</h2>
-                <p>Caracteres</p>
-            </div>
-
-            <div class="card">
-                <h2 id="readingTime">0 min</h2>
-                <p>Tiempo de lectura</p>
-            </div>
-
+        <div class="card">
+            <h2 id="words">0</h2>
+            <p>Palabras</p>
         </div>
 
-        <div class="buttons">
+        <div class="card">
+            <h2 id="characters">0</h2>
+            <p>Caracteres</p>
+        </div>
 
-            <button id="copyButton">📋 Copiar</button>
+        <div class="card">
+            <h2 id="charactersNoSpaces">0</h2>
+            <p>Sin espacios</p>
+        </div>
 
-            <button id="clearButton">🗑️ Limpiar</button>
+        <div class="card">
+            <h2 id="sentences">0</h2>
+            <p>Frases</p>
+        </div>
 
+        <div class="card">
+            <h2 id="paragraphs">0</h2>
+            <p>Párrafos</p>
+        </div>
+
+        <div class="card">
+            <h2 id="readingTime">0 min</h2>
+            <p>Lectura</p>
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="buttons">
+        <button id="copy">📋 Copiar</button>
+        <button id="clear">🗑️ Limpiar</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
