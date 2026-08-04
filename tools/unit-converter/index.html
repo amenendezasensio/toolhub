@@ -18,29 +18,32 @@
 
 <div class="container">
 
-    <h1>📏 Conversor de Unidades</h1>
+    <h1>🔄 Conversor de Unidades</h1>
 
-    <div class="row">
-        <select id="type">
-            <option value="length">Longitud</option>
-            <option value="weight">Peso</option>
-            <option value="temperature">Temperatura</option>
-        </select>
-    </div>
+    <label for="category">Categoría</label>
 
-    <div class="row">
-        <input type="number" id="value" placeholder="Introduce un valor">
-    </div>
+    <select id="category">
+        <option value="length">📏 Longitud</option>
+        <option value="weight">⚖️ Masa</option>
+        <option value="temperature">🌡️ Temperatura</option>
+    </select>
 
-    <div class="row">
-        <select id="from"></select>
-        <select id="to"></select>
-    </div>
+    <label for="from">Convertir de</label>
 
-    <button id="convert">Convertir</button>
+    <select id="from"></select>
+
+    <label for="to">Convertir a</label>
+
+    <select id="to"></select>
+
+    <input
+        type="number"
+        id="value"
+        placeholder="Introduce un valor"
+    >
 
     <div class="result">
-        <h2 id="result">0</h2>
+        <h2 id="result">—</h2>
     </div>
 
 </div>

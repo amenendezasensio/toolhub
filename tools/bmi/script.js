@@ -1,34 +1,35 @@
 const weightInput = document.getElementById("weight");
 const heightInput = document.getElementById("height");
 
-const calculateButton = document.getElementById("calculate");
+const bmi = document.getElementById("bmi");
+const category = document.getElementById("category");
 
-const result = document.getElementById("result");
-const status = document.getElementById("status");
-
-calculateButton.addEventListener("click", () => {
+function calculateBMI() {
 
     const weight = parseFloat(weightInput.value);
-    const height = parseFloat(heightInput.value) / 100;
+    const height = parseFloat(heightInput.value);
 
-    if (isNaN(weight) || isNaN(height) || height <= 0) {
-        result.textContent = "--";
-        status.textContent = "Introduce valores válidos";
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        bmi.textContent = "—";
+        category.textContent = "Introduce tu peso y altura";
         return;
     }
 
-    const bmi = weight / (height * height);
+    const heightMeters = height / 100;
+    const value = weight / (heightMeters * heightMeters);
 
-    result.textContent = bmi.toFixed(1);
+    bmi.textContent = value.toFixed(1);
 
-    if (bmi < 18.5) {
-        status.textContent = "🔵 Bajo peso";
-    } else if (bmi < 25) {
-        status.textContent = "🟢 Peso normal";
-    } else if (bmi < 30) {
-        status.textContent = "🟠 Sobrepeso";
+    if (value < 18.5) {
+        category.textContent = "⚠️ Bajo peso";
+    } else if (value < 25) {
+        category.textContent = "✅ Peso normal";
+    } else if (value < 30) {
+        category.textContent = "🟠 Sobrepeso";
     } else {
-        status.textContent = "🔴 Obesidad";
+        category.textContent = "🔴 Obesidad";
     }
+}
 
-});
+weightInput.addEventListener("input", calculateBMI);
+heightInput.addEventListener("input", calculateBMI);

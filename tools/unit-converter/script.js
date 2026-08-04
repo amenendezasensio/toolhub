@@ -1,14 +1,31 @@
-const type = document.getElementById("type");
-const value = document.getElementById("value");
+const category = document.getElementById("category");
 const from = document.getElementById("from");
 const to = document.getElementById("to");
+const value = document.getElementById("value");
 const result = document.getElementById("result");
-const convertButton = document.getElementById("convert");
 
 const units = {
-    length: ["Metros", "Kilómetros", "Centímetros"],
-    weight: ["Kilogramos", "Gramos"],
-    temperature: ["Celsius", "Fahrenheit", "Kelvin"]
+    length: {
+        units: ["Metros", "Kilómetros", "Centímetros"],
+        factors: {
+            "Metros": 1,
+            "Kilómetros": 1000,
+            "Centímetros": 0.01
+        }
+    },
+
+    weight: {
+        units: ["Kilogramos", "Gramos", "Libras"],
+        factors: {
+            "Kilogramos": 1,
+            "Gramos": 0.001,
+            "Libras": 0.45359237
+        }
+    },
+
+    temperature: {
+        units: ["Celsius", "Fahrenheit", "Kelvin"]
+    }
 };
 
 function loadUnits() {
@@ -16,71 +33,91 @@ function loadUnits() {
     from.innerHTML = "";
     to.innerHTML = "";
 
-    units[type.value].forEach(unit => {
+    const list = units[category.value].units;
 
-        from.innerHTML += `<option value="${unit}">${unit}</option>`;
-        to.innerHTML += `<option value="${unit}">${unit}</option>`;
+    list.forEach(unit => {
+
+        from.innerHTML += `<option>${unit}</option>`;
+        to.innerHTML += `<option>${unit}</option>`;
 
     });
 
     to.selectedIndex = 1;
+
+    calculate();
+
 }
 
-loadUnits();
+function calculate() {
 
-type.addEventListener("change", loadUnits);
+    const number = parseFloat(value.value);
 
-convertButton.addEventListener("click", () => {
-
-    const input = parseFloat(value.value);
-
-    if (isNaN(input)) {
-        result.textContent = "Introduce un valor";
+    if (isNaN(number)) {
+        result.textContent = "—";
         return;
     }
 
-    let output = input;
+    if (category.value === "temperature") {
 
-    if (type.value === "length") {
+        let celsius;
 
-        let meters = input;
+        switch (from.value) {
 
-        if (from.value === "Kilómetros") meters *= 1000;
-        if (from.value === "Centímetros") meters /= 100;
+            case "Celsius":
+                celsius = number;
+                break;
 
-        output = meters;
+            case "Fahrenheit":
+                celsius = (number - 32) * 5 / 9;
+                break;
 
-        if (to.value === "Kilómetros") output /= 1000;
-        if (to.value === "Centímetros") output *= 100;
+            case "Kelvin":
+                celsius = number - 273.15;
+                break;
+
+        }
+
+        let output;
+
+        switch (to.value) {
+
+            case "Celsius":
+                output = celsius;
+                break;
+
+            case "Fahrenheit":
+                output = celsius * 9 / 5 + 32;
+                break;
+
+            case "Kelvin":
+                output = celsius + 273.15;
+                break;
+
+        }
+
+        result.textContent = output.toLocaleString("es-ES", {
+            maximumFractionDigits: 4
+        });
+
+        return;
 
     }
 
-    if (type.value === "weight") {
+    const factors = units[category.value].factors;
 
-        let kg = input;
+    const meters = number * factors[from.value];
 
-        if (from.value === "Gramos") kg /= 1000;
+    const output = meters / factors[to.value];
 
-        output = kg;
+    result.textContent = output.toLocaleString("es-ES", {
+        maximumFractionDigits: 6
+    });
 
-        if (to.value === "Gramos") output *= 1000;
+}
 
-    }
+category.addEventListener("change", loadUnits);
+from.addEventListener("change", calculate);
+to.addEventListener("change", calculate);
+value.addEventListener("input", calculate);
 
-    if (type.value === "temperature") {
-
-        let c = input;
-
-        if (from.value === "Fahrenheit") c = (input - 32) * 5 / 9;
-        if (from.value === "Kelvin") c = input - 273.15;
-
-        output = c;
-
-        if (to.value === "Fahrenheit") output = c * 9 / 5 + 32;
-        if (to.value === "Kelvin") output = c + 273.15;
-
-    }
-
-    result.textContent = Number(output.toFixed(4));
-
-});
+loadUnits();

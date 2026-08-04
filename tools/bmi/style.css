@@ -16,26 +16,32 @@ body{
 
 .container{
     width:100%;
-    max-width:600px;
-    background:white;
+    max-width:650px;
+    background:#fff;
     border-radius:24px;
     padding:40px;
     box-shadow:0 20px 60px rgba(0,0,0,.12);
-    text-align:center;
 }
 
 h1{
-    font-size:40px;
+    text-align:center;
     margin-bottom:30px;
+    font-size:38px;
+}
+
+label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
 }
 
 input{
     width:100%;
     padding:16px;
-    margin-bottom:18px;
     border:2px solid #ddd;
     border-radius:14px;
-    font-size:17px;
+    font-size:16px;
+    margin-bottom:20px;
 }
 
 input:focus{
@@ -43,38 +49,22 @@ input:focus{
     border-color:#4f46e5;
 }
 
-button{
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:14px;
-    background:#4f46e5;
-    color:white;
-    font-size:18px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.25s;
-}
-
-button:hover{
-    transform:translateY(-2px);
-}
-
 .result{
-    margin-top:30px;
-    padding:25px;
+    margin-top:15px;
     background:#f8fafc;
     border-radius:18px;
+    padding:30px;
+    text-align:center;
 }
 
-#result{
-    font-size:42px;
-    font-weight:700;
+.result h2{
+    font-size:48px;
     color:#4f46e5;
     margin-bottom:10px;
 }
 
-#status{
+.result p{
     font-size:20px;
     font-weight:600;
+    color:#555;
 }
