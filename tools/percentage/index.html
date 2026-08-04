@@ -20,30 +20,34 @@
 
     <h1>📊 Calculadora de Porcentajes</h1>
 
-    <p class="subtitle">
-        Calcula porcentajes de forma rápida y sencilla.
-    </p>
+    <label for="mode">¿Qué quieres calcular?</label>
 
-    <input
-        type="number"
-        id="percentage"
-        placeholder="Porcentaje (%)">
+    <select id="mode">
+        <option value="percentOf">¿Cuánto es X% de Y?</option>
+        <option value="whatPercent">¿Qué porcentaje representa X de Y?</option>
+        <option value="increase">Aumentar un número un X%</option>
+        <option value="decrease">Reducir un número un X%</option>
+        <option value="change">Cambio porcentual entre dos valores</option>
+    </select>
 
-    <input
-        type="number"
-        id="number"
-        placeholder="Número">
+    <div id="inputs">
 
-    <button id="calculateButton">
-        Calcular
-    </button>
+        <input
+            type="number"
+            id="value1"
+            placeholder="Primer valor"
+        >
+
+        <input
+            type="number"
+            id="value2"
+            placeholder="Segundo valor"
+        >
+
+    </div>
 
     <div class="result">
-
-        <h2>Resultado</h2>
-
-        <p id="resultText">0</p>
-
+        <h2 id="result">—</h2>
     </div>
 
 </div>
@@ -51,5 +55,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>

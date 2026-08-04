@@ -1,21 +1,75 @@
-const percentage = document.getElementById("percentage");
-const number = document.getElementById("number");
+const mode = document.getElementById("mode");
+const value1 = document.getElementById("value1");
+const value2 = document.getElementById("value2");
+const result = document.getElementById("result");
 
-const calculateButton = document.getElementById("calculateButton");
-const resultText = document.getElementById("resultText");
+function calculate() {
 
-calculateButton.addEventListener("click", () => {
+    const a = parseFloat(value1.value);
+    const b = parseFloat(value2.value);
 
-    const p = Number(percentage.value);
-    const n = Number(number.value);
-
-    if(isNaN(p) || isNaN(n)){
-        resultText.textContent = "Error";
+    if (isNaN(a) || isNaN(b)) {
+        result.textContent = "—";
         return;
     }
 
-    const result = (p / 100) * n;
+    let answer;
 
-    resultText.textContent = result;
+    switch (mode.value) {
 
-});
+        case "percentOf":
+            answer = (a / 100) * b;
+            result.textContent = answer.toLocaleString("es-ES", {
+                maximumFractionDigits: 2
+            });
+            break;
+
+        case "whatPercent":
+            if (b === 0) {
+                result.textContent = "No válido";
+                return;
+            }
+
+            answer = (a / b) * 100;
+
+            result.textContent = answer.toLocaleString("es-ES", {
+                maximumFractionDigits: 2
+            }) + " %";
+            break;
+
+        case "increase":
+            answer = a * (1 + b / 100);
+
+            result.textContent = answer.toLocaleString("es-ES", {
+                maximumFractionDigits: 2
+            });
+            break;
+
+        case "decrease":
+            answer = a * (1 - b / 100);
+
+            result.textContent = answer.toLocaleString("es-ES", {
+                maximumFractionDigits: 2
+            });
+            break;
+
+        case "change":
+            if (a === 0) {
+                result.textContent = "No válido";
+                return;
+            }
+
+            answer = ((b - a) / a) * 100;
+
+            result.textContent = answer.toLocaleString("es-ES", {
+                maximumFractionDigits: 2
+            }) + " %";
+            break;
+
+    }
+
+}
+
+mode.addEventListener("change", calculate);
+value1.addEventListener("input", calculate);
+value2.addEventListener("input", calculate);
