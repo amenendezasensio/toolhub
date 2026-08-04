@@ -86,6 +86,14 @@ const tools = [
     url: "tools/json-formatter/index.html",
     category: "Desarrollo",
     badge: "⭐ Destacada"
+    },
+    {
+    name: "Generador de UUID",
+    description: "Genera identificadores UUID v4 aleatorios.",
+    icon: "🆔",
+    url: "tools/uuid/index.html",
+    category: "Desarrollo",
+    badge: "🆕 Nuevo"
     }
 ];
 
