@@ -46,6 +46,14 @@ const tools = [
     url: "tools/stopwatch/index.html",
     category: "Utilidades",
     badge: "⭐ Destacada"
+    },
+    {
+    name: "Temporizador",
+    description: "Cuenta atrás online con minutos y segundos.",
+    icon: "⏲️",
+    url: "tools/timer/index.html",
+    category: "Utilidades",
+    badge: "🆕 Nuevo"
     }
 ];
 
