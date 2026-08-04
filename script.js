@@ -78,6 +78,14 @@ const tools = [
     url: "tools/bmi/index.html",
     category: "Salud",
     badge: "🆕 Nuevo"
+    },
+    {
+    name: "Formateador JSON",
+    description: "Valida y formatea archivos JSON.",
+    icon: "📦",
+    url: "tools/json-formatter/index.html",
+    category: "Desarrollo",
+    badge: "⭐ Destacada"
     }
 ];
 
