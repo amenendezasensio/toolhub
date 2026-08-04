@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades | ToolHub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📏 Conversor de Unidades</h1>
+
+    <div class="row">
+        <select id="type">
+            <option value="length">Longitud</option>
+            <option value="weight">Peso</option>
+            <option value="temperature">Temperatura</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <input type="number" id="value" placeholder="Introduce un valor">
+    </div>
+
+    <div class="row">
+        <select id="from"></select>
+        <select id="to"></select>
+    </div>
+
+    <button id="convert">Convertir</button>
+
+    <div class="result">
+        <h2 id="result">0</h2>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

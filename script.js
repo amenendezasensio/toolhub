@@ -54,6 +54,14 @@ const tools = [
     url: "tools/timer/index.html",
     category: "Utilidades",
     badge: "🆕 Nuevo"
+    },
+    {
+    name: "Conversor de Unidades",
+    description: "Convierte longitud, peso y temperatura al instante.",
+    icon: "📏",
+    url: "tools/unit-converter/index.html",
+    category: "Calculadoras",
+    badge: "⭐ Destacada"
     }
 ];
 
