@@ -110,6 +110,14 @@ const tools = [
     url: "tools/text-converter/index.html",
     category: "Texto",
     badge: "⭐ Destacada"
+    },
+    {
+    name: "Generador SHA-256",
+    description: "Genera un hash SHA-256 a partir de un texto.",
+    icon: "🔒",
+    url: "tools/sha256/index.html",
+    category: "Seguridad",
+    badge: "⭐ Destacada"
     }
 ];
 
