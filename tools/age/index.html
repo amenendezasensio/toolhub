@@ -20,23 +20,46 @@
 
     <h1>🎂 Calculadora de Edad</h1>
 
-    <p class="subtitle">
-        Descubre tu edad exacta.
-    </p>
+    <label for="birthdate">Fecha de nacimiento</label>
 
-    <input type="date" id="birthDate">
+    <input
+        type="date"
+        id="birthdate"
+    >
 
-    <button id="calculateButton">
-        Calcular edad
-    </button>
+    
 
-    <div class="result">
+    <div class="results">
 
-        <h2 id="years">0 años</h2>
+        <div class="card">
+            <h2 id="age">-</h2>
+            <p>Edad exacta</p>
+        </div>
 
-        <p id="details">
-            Introduce tu fecha de nacimiento.
-        </p>
+        <div class="card">
+            <h2 id="days">-</h2>
+            <p>Días vividos</p>
+        </div>
+
+        <div class="card">
+            <h2 id="nextBirthday">-</h2>
+            <p>Días hasta tu cumpleaños</p>
+        </div>
+
+        <div class="card">
+            <h2 id="weekday">-</h2>
+            <p>Día de nacimiento</p>
+        </div>
+
+        <div class="card">
+            <h2 id="zodiac">-</h2>
+            <p>Signo del zodiaco</p>
+        </div>
+
+        <div class="card">
+            <h2 id="chinese">-</h2>
+            <p>Horóscopo chino</p>
+        </div>
 
     </div>
 
