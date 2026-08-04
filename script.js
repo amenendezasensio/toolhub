@@ -94,6 +94,14 @@ const tools = [
     url: "tools/uuid/index.html",
     category: "Desarrollo",
     badge: "🆕 Nuevo"
+    },
+    {
+    name: "Selector de Colores",
+    description: "Obtén colores en formato HEX, RGB y HSL.",
+    icon: "🎨",
+    url: "tools/color-picker/index.html",
+    category: "Diseño",
+    badge: "⭐ Destacada"
     }
 ];
 
