@@ -70,6 +70,14 @@ const tools = [
     url: "tools/date-difference/index.html",
     category: "Calculadoras",
     badge: "🔥 Popular"
+    },
+    {
+    name: "Calculadora de IMC",
+    description: "Calcula tu índice de masa corporal.",
+    icon: "⚖️",
+    url: "tools/bmi/index.html",
+    category: "Salud",
+    badge: "🆕 Nuevo"
     }
 ];
 
