@@ -4,47 +4,90 @@ const tools = [
         description: "Crea contraseñas seguras en segundos.",
         icon: "🔐",
         url: "tools/password/index.html",
-        category: "Seguridad"
+        category: "Seguridad",
+        badge: "🔥 Popular"
     },
     {
         name: "Generador QR",
         description: "Convierte enlaces en códigos QR.",
         icon: "📱",
         url: "tools/qr/index.html",
-        category: "Utilidades"
+        category: "Utilidades",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Calculadora de Edad",
-    description: "Calcula tu edad exacta en años, meses y días.",
-    icon: "🎂",
-    url: "tools/age/index.html",
-    category: "Calculadoras"
+        name: "Calculadora de Edad",
+        description: "Calcula tu edad exacta en años, meses y días.",
+        icon: "🎂",
+        url: "tools/age/index.html",
+        category: "Calculadoras",
+        badge: "🆕 Nuevo"
     },
     {
         name: "Contador de Palabras",
         description: "Cuenta palabras y caracteres.",
         icon: "📝",
         url: "tools/word-counter/index.html",
-        category: "Texto"
+        category: "Texto",
+        badge: "🔥 Popular"
     },
     {
-    name: "Calculadora de Porcentajes",
-    description: "Calcula porcentajes de forma rápida.",
-    icon: "📊",
-    url: "tools/percentage/index.html",
-    category: "Calculadoras"
+        name: "Calculadora de Porcentajes",
+        description: "Calcula porcentajes de forma rápida.",
+        icon: "📊",
+        url: "tools/percentage/index.html",
+        category: "Calculadoras",
+        badge: "⭐ Destacada"
     },
     {
         name: "Cronómetro",
         description: "Cronómetro online gratuito.",
         icon: "⏱️",
         url: "#",
-        category: "Utilidades"
+        category: "Utilidades",
+        badge: "🚧 Próximamente"
     }
 ];
 
 const container = document.getElementById("toolContainer");
 const searchInput = document.getElementById("searchInput");
+const toolCount = document.getElementById("toolCount");
+const categoryCount = document.getElementById("categoryCount");
+
+if (toolCount) {
+    toolCount.textContent = tools.filter(tool => tool.url !== "#").length;
+}
+
+if (categoryCount) {
+    const categories = [...new Set(tools.map(tool => tool.category))];
+    categoryCount.textContent = categories.length;
+}
+const featuredContainer = document.getElementById("featuredTool");
+
+if (featuredContainer) {
+
+    const featured = tools.find(tool => tool.badge === "🔥 Popular") || tools[0];
+
+    featuredContainer.innerHTML = `
+        <div class="featuredCard">
+
+            <div class="featuredIcon">${featured.icon}</div>
+
+            <div>
+
+                <h3>${featured.name}</h3>
+
+                <p>${featured.description}</p>
+
+                <a href="${featured.url}" class="featuredButton">
+                    Usar herramienta →
+                </a>
+
+            </div>
+
+        </div>
+    `;
+}
 
 function showTools(search = "", category = "Todas") {
 
@@ -63,13 +106,19 @@ function showTools(search = "", category = "Todas") {
 
     filtered.forEach(tool => {
 
-        container.innerHTML += `
-            <div class="card" onclick="openTool('${tool.url}')">
-                <h2>${tool.icon}</h2>
-                <h3>${tool.name}</h3>
-                <p>${tool.description}</p>
-            </div>
-        `;
+    container.innerHTML += `
+    <div class="card" onclick="openTool('${tool.url}')">
+
+        ${tool.badge ? `<span class="badge">${tool.badge}</span>` : ""}
+
+        <div class="icon">${tool.icon}</div>
+
+        <h3>${tool.name}</h3>
+
+        <p>${tool.description}</p>
+
+    </div>
+`;
 
     });
 
