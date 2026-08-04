@@ -62,6 +62,14 @@ const tools = [
     url: "tools/unit-converter/index.html",
     category: "Calculadoras",
     badge: "⭐ Destacada"
+    },
+    {
+    name: "Calculadora de Días",
+    description: "Calcula los días entre dos fechas.",
+    icon: "📅",
+    url: "tools/date-difference/index.html",
+    category: "Calculadoras",
+    badge: "🔥 Popular"
     }
 ];
 
