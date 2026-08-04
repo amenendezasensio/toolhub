@@ -11,48 +11,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>📱 Generador de Códigos QR</h1>
+    <h1>📱 Generador QR</h1>
 
-        <p class="subtitle">
-            Escribe un enlace o un texto y genera un código QR al instante.
-        </p>
+    <input
+        id="text"
+        type="text"
+        placeholder="Escribe un enlace o un texto..."
+    >
 
-        <input
-            type="text"
-            id="qrInput"
-            placeholder="https://ejemplo.com">
+    <div class="controls">
 
-        <button id="generateButton">
-            Generar QR
-        </button>
-
-        <div class="qrBox">
-
-            <img
-                id="qrImage"
-                alt="Código QR">
-
+        <div class="control">
+            <label>Tamaño</label>
+            <input
+                id="size"
+                type="range"
+                min="150"
+                max="500"
+                value="250"
+            >
+            <span id="sizeValue">250 px</span>
         </div>
-
-        <button
-            id="downloadButton"
-            style="display:none;">
-
-            Descargar QR
-
-        </button>
 
     </div>
 
-    <script src="script.js"></script>
+    <div id="qr"></div>
+
+    <div class="buttons">
+        <button id="generate">Generar QR</button>
+        <button id="download">Descargar PNG</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
