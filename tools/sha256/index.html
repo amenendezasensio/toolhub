@@ -2,39 +2,55 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador SHA-256 | ToolHub</title>
 
-<title>Generador SHA-256 | ToolHub</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🔒 Generador SHA-256</h1>
+    <h1>🔒 Generador SHA-256</h1>
 
-<textarea
-id="input"
-placeholder="Escribe o pega un texto..."
-></textarea>
+    <textarea
+        id="input"
+        placeholder="Escribe o pega el texto..."
+    ></textarea>
 
-<button id="generate">
-Generar Hash
-</button>
+    <div class="buttons">
+        <button id="copy">📋 Copiar hash</button>
+        <button id="clear">🗑️ Limpiar</button>
+    </div>
 
-<textarea
-id="output"
-readonly
-placeholder="Aquí aparecerá el hash..."
-></textarea>
+    <div class="stats">
+
+        <div class="card">
+            <h2 id="characters">0</h2>
+            <p>Caracteres</p>
+        </div>
+
+        <div class="card">
+            <h2 id="length">64</h2>
+            <p>Longitud del hash</p>
+        </div>
+
+    </div>
+
+    <label for="output">Hash SHA-256</label>
+
+    <textarea
+        id="output"
+        readonly
+        placeholder="El hash aparecerá automáticamente..."
+    ></textarea>
 
 </div>
 

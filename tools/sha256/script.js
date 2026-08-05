@@ -1,18 +1,19 @@
 const input = document.getElementById("input");
 const output = document.getElementById("output");
-const generateButton = document.getElementById("generate");
 
-// Crear botón de copiar
-const copyButton = document.createElement("button");
-copyButton.textContent = "📋 Copiar Hash";
-copyButton.style.marginTop = "15px";
+const characters = document.getElementById("characters");
+const length = document.getElementById("length");
 
-document.querySelector(".container").appendChild(copyButton);
+const copyButton = document.getElementById("copy");
+const clearButton = document.getElementById("clear");
 
 async function generateHash() {
 
-    if (!input.value.trim()) {
-        output.value = "Introduce un texto.";
+    characters.textContent = input.value.length;
+
+    if (input.value === "") {
+        output.value = "";
+        length.textContent = "64";
         return;
     }
 
@@ -23,34 +24,38 @@ async function generateHash() {
 
     const hashArray = Array.from(new Uint8Array(hashBuffer));
 
-    const hashHex = hashArray
+    const hash = hashArray
         .map(byte => byte.toString(16).padStart(2, "0"))
         .join("");
 
-    output.value = hashHex;
+    output.value = hash;
+
+    length.textContent = hash.length;
 
 }
 
-generateButton.addEventListener("click", generateHash);
+input.addEventListener("input", generateHash);
 
 copyButton.addEventListener("click", async () => {
 
-    if (!output.value) return;
+    if (output.value === "") return;
 
-    try {
+    await navigator.clipboard.writeText(output.value);
 
-        await navigator.clipboard.writeText(output.value);
+    copyButton.textContent = "✅ Copiado";
 
-        copyButton.textContent = "✅ ¡Copiado!";
+    setTimeout(() => {
+        copyButton.textContent = "📋 Copiar hash";
+    }, 1500);
 
-        setTimeout(() => {
-            copyButton.textContent = "📋 Copiar Hash";
-        }, 2000);
+});
 
-    } catch {
+clearButton.addEventListener("click", () => {
 
-        alert("No se pudo copiar el hash.");
+    input.value = "";
+    output.value = "";
 
-    }
+    characters.textContent = "0";
+    length.textContent = "64";
 
 });
