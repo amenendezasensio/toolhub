@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://toolhub-4bj.pages.dev/sitemap.xml
