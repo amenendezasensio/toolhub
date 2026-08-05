@@ -2,39 +2,50 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador UUID | ToolHub</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>Generador de UUID | ToolHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🆔 Generador de UUID</h1>
+    <h1>🆔 Generador UUID</h1>
 
-<div id="uuid" class="uuidBox">
-Pulsa el botón para generar un UUID
-</div>
+    <label for="count">Cantidad</label>
 
-<button id="generate">
-Generar UUID
-</button>
+    <select id="count">
+        <option value="1">1 UUID</option>
+        <option value="5">5 UUID</option>
+        <option value="10">10 UUID</option>
+        <option value="25">25 UUID</option>
+        <option value="50">50 UUID</option>
+        <option value="100">100 UUID</option>
+    </select>
+
+    <div class="buttons">
+        <button id="generate">🔄 Generar</button>
+        <button id="copy">📋 Copiar todos</button>
+        <button id="download">📥 Descargar TXT</button>
+    </div>
+
+    <textarea
+        id="output"
+        readonly
+        placeholder="Aquí aparecerán los UUID..."
+    ></textarea>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

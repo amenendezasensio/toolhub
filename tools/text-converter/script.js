@@ -1,50 +1,108 @@
-const input = document.getElementById("input");
-const output = document.getElementById("output");
+const text = document.getElementById("text");
 
-const upperButton = document.getElementById("upper");
-const lowerButton = document.getElementById("lower");
-const capitalizeButton = document.getElementById("capitalize");
+const uppercase = document.getElementById("uppercase");
+const lowercase = document.getElementById("lowercase");
+const titlecase = document.getElementById("titlecase");
+const alternate = document.getElementById("alternate");
+const reverse = document.getElementById("reverse");
+const spaces = document.getElementById("spaces");
+const lines = document.getElementById("lines");
+const copy = document.getElementById("copy");
 
-// Crear botón para copiar
-const copyButton = document.createElement("button");
-copyButton.textContent = "📋 Copiar";
+const characters = document.getElementById("characters");
+const words = document.getElementById("words");
 
-document.querySelector(".buttons").appendChild(copyButton);
+function updateStats() {
 
-upperButton.addEventListener("click", () => {
-    output.value = input.value.toUpperCase();
+    characters.textContent = text.value.length;
+
+    const wordArray = text.value.trim() === ""
+        ? []
+        : text.value.trim().split(/\s+/);
+
+    words.textContent = wordArray.length;
+
+}
+
+text.addEventListener("input", updateStats);
+
+uppercase.addEventListener("click", () => {
+    text.value = text.value.toUpperCase();
+    updateStats();
 });
 
-lowerButton.addEventListener("click", () => {
-    output.value = input.value.toLowerCase();
+lowercase.addEventListener("click", () => {
+    text.value = text.value.toLowerCase();
+    updateStats();
 });
 
-capitalizeButton.addEventListener("click", () => {
+titlecase.addEventListener("click", () => {
 
-    output.value = input.value.replace(/\b\w/g, letter =>
-        letter.toUpperCase()
-    );
+    text.value = text.value
+        .toLowerCase()
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+
+    updateStats();
 
 });
 
-copyButton.addEventListener("click", async () => {
+alternate.addEventListener("click", () => {
 
-    if (!output.value) return;
+    let result = "";
 
-    try {
+    for (let i = 0; i < text.value.length; i++) {
 
-        await navigator.clipboard.writeText(output.value);
-
-        copyButton.textContent = "✅ ¡Copiado!";
-
-        setTimeout(() => {
-            copyButton.textContent = "📋 Copiar";
-        }, 2000);
-
-    } catch {
-
-        alert("No se pudo copiar el texto.");
+        result += i % 2 === 0
+            ? text.value[i].toLowerCase()
+            : text.value[i].toUpperCase();
 
     }
 
+    text.value = result;
+
+    updateStats();
+
 });
+
+reverse.addEventListener("click", () => {
+
+    text.value = text.value
+        .split("")
+        .reverse()
+        .join("");
+
+    updateStats();
+
+});
+
+spaces.addEventListener("click", () => {
+
+    text.value = text.value.replace(/\s+/g, " ").trim();
+
+    updateStats();
+
+});
+
+lines.addEventListener("click", () => {
+
+    text.value = text.value.replace(/\n+/g, " ");
+
+    updateStats();
+
+});
+
+copy.addEventListener("click", async () => {
+
+    if (text.value === "") return;
+
+    await navigator.clipboard.writeText(text.value);
+
+    copy.textContent = "✅ Copiado";
+
+    setTimeout(() => {
+        copy.textContent = "📋 Copiar";
+    }, 1500);
+
+});
+
+updateStats();

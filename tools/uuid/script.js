@@ -1,39 +1,62 @@
-const uuidBox = document.getElementById("uuid");
+const count = document.getElementById("count");
+const output = document.getElementById("output");
 
-// Crear botón de copiar
-const copyButton = document.createElement("button");
-copyButton.textContent = "📋 Copiar UUID";
+const generateButton = document.getElementById("generate");
+const copyButton = document.getElementById("copy");
+const downloadButton = document.getElementById("download");
 
-document.querySelector(".container").appendChild(copyButton);
+function generateUUIDs() {
 
-function generateUUID() {
+    const total = Number(count.value);
+    const uuids = [];
 
-    const uuid = crypto.randomUUID();
+    for (let i = 0; i < total; i++) {
+        uuids.push(crypto.randomUUID());
+    }
 
-    uuidBox.textContent = uuid;
+    output.value = uuids.join("\n");
 
 }
 
-generateUUID();
-
-document.getElementById("generate").addEventListener("click", generateUUID);
+generateButton.addEventListener("click", generateUUIDs);
 
 copyButton.addEventListener("click", async () => {
 
-    try {
+    if (output.value.trim() === "") return;
 
-        await navigator.clipboard.writeText(uuidBox.textContent);
+    await navigator.clipboard.writeText(output.value);
 
-        copyButton.textContent = "✅ ¡Copiado!";
+    copyButton.textContent = "✅ Copiado";
 
-        setTimeout(() => {
-            copyButton.textContent = "📋 Copiar UUID";
-        }, 2000);
-
-    } catch {
-
-        alert("No se pudo copiar el UUID.");
-
-    }
+    setTimeout(() => {
+        copyButton.textContent = "📋 Copiar todos";
+    }, 1500);
 
 });
+
+downloadButton.addEventListener("click", () => {
+
+    if (output.value.trim() === "") return;
+
+    const blob = new Blob([output.value], {
+        type: "text/plain"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "uuids.txt";
+
+    link.click();
+
+    URL.revokeObjectURL(url);
+
+});
+
+// Generar automáticamente al abrir la página
+generateUUIDs();
+
+// Regenerar automáticamente al cambiar la cantidad
+count.addEventListener("change", generateUUIDs);

@@ -2,41 +2,46 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formateador JSON | ToolHub</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>Formateador JSON | ToolHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>📦 Formateador JSON</h1>
+    <h1>{ } Formateador JSON</h1>
 
-<textarea id="input" placeholder="Pega aquí tu JSON..."></textarea>
+    <textarea
+        id="input"
+        placeholder="Pega aquí tu JSON..."
+    ></textarea>
 
-<button id="format">Formatear JSON</button>
+    <div class="buttons">
 
-<div class="result">
+        <button id="format">✨ Formatear</button>
+        <button id="minify">📦 Minificar</button>
+        <button id="validate">✅ Validar</button>
+        <button id="copy">📋 Copiar</button>
+        <button id="clear">🗑️ Limpiar</button>
 
-<textarea id="output" readonly placeholder="Aquí aparecerá el resultado..."></textarea>
+    </div>
 
-</div>
+    <div class="message" id="message">
+        Introduce un JSON para comenzar.
+    </div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

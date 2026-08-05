@@ -20,15 +20,44 @@
 
     <h1>🔤 Convertidor de Texto</h1>
 
-    <textarea id="input" placeholder="Escribe o pega tu texto..."></textarea>
+    <textarea
+        id="text"
+        placeholder="Escribe o pega aquí tu texto..."
+    ></textarea>
 
     <div class="buttons">
-        <button id="upper">MAYÚSCULAS</button>
-        <button id="lower">minúsculas</button>
-        <button id="capitalize">Primera Letra</button>
+
+        <button id="uppercase">MAYÚSCULAS</button>
+
+        <button id="lowercase">minúsculas</button>
+
+        <button id="titlecase">Tipo Título</button>
+
+        <button id="alternate">aLtErNaR</button>
+
+        <button id="reverse">Invertir</button>
+
+        <button id="spaces">Quitar espacios</button>
+
+        <button id="lines">Quitar saltos</button>
+
+        <button id="copy">📋 Copiar</button>
+
     </div>
 
-    <textarea id="output" readonly placeholder="Aquí aparecerá el resultado..."></textarea>
+    <div class="stats">
+
+        <div class="card">
+            <h2 id="characters">0</h2>
+            <p>Caracteres</p>
+        </div>
+
+        <div class="card">
+            <h2 id="words">0</h2>
+            <p>Palabras</p>
+        </div>
+
+    </div>
 
 </div>
 

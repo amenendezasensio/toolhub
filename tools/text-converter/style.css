@@ -16,8 +16,8 @@ body{
 
 .container{
     width:100%;
-    max-width:800px;
-    background:white;
+    max-width:900px;
+    background:#fff;
     border-radius:24px;
     padding:40px;
     box-shadow:0 20px 60px rgba(0,0,0,.12);
@@ -25,20 +25,20 @@ body{
 
 h1{
     text-align:center;
-    font-size:40px;
     margin-bottom:30px;
+    font-size:38px;
 }
 
 textarea{
     width:100%;
-    min-height:180px;
-    resize:vertical;
+    min-height:220px;
     padding:18px;
     border:2px solid #ddd;
-    border-radius:14px;
+    border-radius:16px;
+    resize:vertical;
     font-size:16px;
-    margin-bottom:20px;
     font-family:inherit;
+    margin-bottom:25px;
 }
 
 textarea:focus{
@@ -47,25 +47,48 @@ textarea:focus{
 }
 
 .buttons{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-bottom:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-bottom:30px;
 }
 
 button{
-    padding:15px 25px;
     border:none;
     border-radius:14px;
     background:#4f46e5;
     color:white;
-    font-size:16px;
+    padding:14px;
+    font-size:15px;
     font-weight:600;
     cursor:pointer;
-    transition:.25s;
+    transition:.2s;
 }
 
 button:hover{
     transform:translateY(-2px);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:#f8fafc;
+    border-radius:16px;
+    padding:22px;
+    text-align:center;
+}
+
+.card h2{
+    color:#4f46e5;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#555;
+    font-weight:600;
 }
