@@ -1,0 +1,11 @@
+{
+  "name": "ToolHub",
+  "short_name": "ToolHub",
+  "description": "Herramientas online gratuitas para estudiantes, desarrolladores y creadores.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fc",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": []
+}
