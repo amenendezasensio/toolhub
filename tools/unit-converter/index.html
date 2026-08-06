@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Conversor de Unidades | ToolHub</title>
+
+    <meta name="description" content="Convierte unidades de longitud, masa y temperatura de forma gratuita. Conversor online rápido y preciso.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/unit-converter/">
+
+    <meta property="og:title" content="Conversor de Unidades | ToolHub">
+    <meta property="og:description" content="Convierte unidades online gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/unit-converter/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Conversor de Unidades",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/unit-converter/",
+      "description":"Conversor de unidades gratuito.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -12,13 +43,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>🔄 Conversor de Unidades</h1>
+
+    <p class="description">
+        Convierte fácilmente unidades de longitud, masa y temperatura. Obtén resultados instantáneos con un conversor gratuito que funciona directamente en tu navegador.
+    </p>
 
     <label for="category">Categoría</label>
 
@@ -39,12 +79,33 @@
     <input
         type="number"
         id="value"
-        placeholder="Introduce un valor"
-    >
+        placeholder="Introduce un valor">
 
     <div class="result">
         <h2 id="result">—</h2>
     </div>
+
+    <section class="info">
+
+        <h2>¿Qué puedes convertir?</h2>
+
+        <p>
+            Esta herramienta permite convertir entre distintas unidades de longitud, masa y temperatura de forma rápida y precisa.
+        </p>
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            Selecciona la categoría, elige la unidad de origen y la de destino e introduce un valor. El resultado se calcula automáticamente.
+        </p>
+
+        <h2>¿Es gratuito?</h2>
+
+        <p>
+            Sí. Todas las conversiones se realizan en tu navegador sin necesidad de registrarte y sin enviar información a ningún servidor.
+        </p>
+
+    </section>
 
 </div>
 

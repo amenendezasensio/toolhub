@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculadora IMC | ToolHub</title>
+
+    <meta name="description" content="Calcula tu Índice de Masa Corporal (IMC) online y descubre si tu peso se encuentra dentro de un rango saludable.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/bmi-calculator/">
+
+    <meta property="og:title" content="Calculadora IMC | ToolHub">
+    <meta property="og:description" content="Calcula tu Índice de Masa Corporal online gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/bmi-calculator/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Calculadora IMC",
+      "applicationCategory":"HealthApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/bmi-calculator/",
+      "description":"Calculadora gratuita del Índice de Masa Corporal.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -12,35 +43,69 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>⚖️ Calculadora IMC</h1>
 
+    <p class="description">
+        Calcula tu Índice de Masa Corporal (IMC) introduciendo tu peso y altura. Obtén una estimación rápida basada en la clasificación de la Organización Mundial de la Salud (OMS).
+    </p>
+
     <label for="weight">Peso (kg)</label>
+
     <input
         type="number"
         id="weight"
         placeholder="Ej. 70"
-        step="0.1"
-    >
+        step="0.1">
 
     <label for="height">Altura (cm)</label>
+
     <input
         type="number"
         id="height"
-        placeholder="Ej. 175"
-    >
+        placeholder="Ej. 175">
 
     <div class="result">
 
         <h2 id="bmi">—</h2>
-        <p id="category">Introduce tu peso y altura</p>
+
+        <p id="category">
+            Introduce tu peso y altura
+        </p>
 
     </div>
+
+    <section class="info">
+
+        <h2>¿Qué es el IMC?</h2>
+
+        <p>
+            El Índice de Masa Corporal (IMC) es una medida que relaciona el peso y la altura de una persona para estimar si su peso se encuentra dentro de un rango saludable.
+        </p>
+
+        <h2>¿Cómo se interpreta?</h2>
+
+        <p>
+            Generalmente, un IMC inferior a 18,5 indica bajo peso, entre 18,5 y 24,9 se considera un peso saludable, entre 25 y 29,9 sobrepeso y 30 o más obesidad. Esta clasificación es orientativa y puede no ser adecuada para todos los casos.
+        </p>
+
+        <h2>Importante</h2>
+
+        <p>
+            Esta calculadora tiene un propósito informativo y no sustituye la valoración de un profesional sanitario. Factores como la edad, el sexo, la masa muscular o determinadas condiciones médicas también influyen en la evaluación del estado de salud.
+        </p>
+
+    </section>
 
 </div>
 

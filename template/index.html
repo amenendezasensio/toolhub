@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generador de Contraseñas | ToolHub</title>
+
+    <meta name="description" content="Genera contraseñas seguras y aleatorias gratis. Personaliza la longitud, incluye mayúsculas, minúsculas, números y símbolos.">
+
+    <meta name="keywords" content="generador de contraseñas, contraseña segura, password generator, contraseña aleatoria">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/password-generator/">
+
+    <meta property="og:title" content="Generador de Contraseñas | ToolHub">
+    <meta property="og:description" content="Genera contraseñas seguras y aleatorias gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/password-generator/">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Generador de Contraseñas",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requiere un navegador moderno con JavaScript",
+  "url": "https://toolhub-4bj.pages.dev/tools/password-generator/",
+  "description": "Genera contraseñas seguras y aleatorias de forma gratuita.",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "ToolHub"
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
+    <h1>🔐 Generador de Contraseñas</h1>
+
+    <p class="description">
+        Genera contraseñas seguras y aleatorias para proteger tus cuentas. Personaliza la longitud y el tipo de caracteres en segundos.
+    </p>
+
+    <div class="passwordBox">
+
+        <input
+            type="text"
+            id="password"
+            readonly>
+
+        <button
+            id="copy"
+            type="button">
+
+            📋
+
+        </button>
+
+    </div>
+
+    <div class="lengthSection">
+
+        <label for="length">
+
+            Longitud:
+            <span id="lengthValue">16</span>
+
+        </label>
+
+        <input
+            type="range"
+            id="length"
+            min="4"
+            max="64"
+            value="16">
+
+    </div>
+
+    <div class="options">
+
+        <label>
+            <input type="checkbox" id="uppercase" checked>
+            Mayúsculas
+        </label>
+
+        <label>
+            <input type="checkbox" id="lowercase" checked>
+            Minúsculas
+        </label>
+
+        <label>
+            <input type="checkbox" id="numbers" checked>
+            Números
+        </label>
+
+        <label>
+            <input type="checkbox" id="symbols" checked>
+            Símbolos
+        </label>
+
+        <label>
+            <input type="checkbox" id="exclude">
+            Excluir caracteres confusos
+        </label>
+
+    </div>
+
+    <div class="strength">
+        <div id="strengthBar"></div>
+    </div>
+
+    <p id="strengthText">
+        Seguridad: Alta
+    </p>
+
+    <button
+        id="generate"
+        type="button">
+
+        Generar contraseña
+
+    </button>
+
+    <h2>Últimas contraseñas</h2>
+
+    <ul id="history"></ul>
+
+    <section class="info">
+
+        <h2>¿Qué es un generador de contraseñas?</h2>
+
+        <p>
+            Un generador de contraseñas crea claves aleatorias y difíciles de adivinar para proteger tus cuentas online. Utilizar contraseñas únicas y largas reduce el riesgo de ataques y mejora la seguridad de tu información.
+        </p>
+
+        <h2>¿Por qué utilizar contraseñas seguras?</h2>
+
+        <p>
+            Muchas filtraciones de datos ocurren porque los usuarios reutilizan contraseñas o eligen combinaciones demasiado simples. Una contraseña segura debe contener letras mayúsculas y minúsculas, números y símbolos, además de tener una longitud suficiente.
+        </p>
+
+        <h2>¿Cómo funciona esta herramienta?</h2>
+
+        <p>
+            Selecciona la longitud deseada, elige los tipos de caracteres que quieres incluir y pulsa el botón para generar una contraseña completamente aleatoria. Después podrás copiarla con un solo clic.
+        </p>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

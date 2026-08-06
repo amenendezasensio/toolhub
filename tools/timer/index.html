@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporizador | ToolHub</title>
+
+    <title>Temporizador Online | ToolHub</title>
+
+    <meta name="description" content="Temporizador online gratuito. Configura minutos y segundos, inicia la cuenta atrás, pausa o reinicia el cronómetro fácilmente.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/timer/">
+
+    <meta property="og:title" content="Temporizador Online | ToolHub">
+    <meta property="og:description" content="Temporizador online gratuito para estudiar, cocinar, entrenar y trabajar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/timer/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Temporizador Online",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/timer/",
+      "description":"Temporizador online gratuito.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -12,13 +43,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>⏲️ Temporizador</h1>
+
+    <p class="description">
+        Configura una cuenta atrás en minutos y segundos. Perfecto para estudiar, cocinar, entrenar, trabajar con la técnica Pomodoro o cualquier otra actividad.
+    </p>
 
     <div class="inputs">
         <input type="number" id="minutes" placeholder="Minutos" min="0">
@@ -28,10 +68,32 @@
     <div id="display">00:00</div>
 
     <div class="buttons">
-        <button id="start">Iniciar</button>
-        <button id="pause">Pausar</button>
-        <button id="reset">Reiniciar</button>
+        <button id="start">▶️ Iniciar</button>
+        <button id="pause">⏸️ Pausar</button>
+        <button id="reset">🔄 Reiniciar</button>
     </div>
+
+    <section class="info">
+
+        <h2>¿Qué es un temporizador?</h2>
+
+        <p>
+            Un temporizador realiza una cuenta atrás desde el tiempo que elijas hasta llegar a cero. Es útil para controlar tareas con un límite de tiempo.
+        </p>
+
+        <h2>¿Para qué sirve?</h2>
+
+        <p>
+            Puedes utilizarlo para sesiones de estudio, entrenamiento, cocina, descansos, productividad o cualquier actividad que requiera medir el tiempo.
+        </p>
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            Introduce los minutos y segundos, pulsa <strong>Iniciar</strong> y el temporizador comenzará la cuenta atrás automáticamente. Puedes pausarlo o reiniciarlo cuando quieras.
+        </p>
+
+    </section>
 
 </div>
 

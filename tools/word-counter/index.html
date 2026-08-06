@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contador de Palabras | ToolHub</title>
+
+    <meta name="description" content="Cuenta palabras, caracteres, frases, párrafos y tiempo de lectura de cualquier texto de forma gratuita.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/word-counter/">
+
+    <meta property="og:title" content="Contador de Palabras | ToolHub">
+    <meta property="og:description" content="Cuenta palabras, caracteres y tiempo de lectura gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/word-counter/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Contador de Palabras",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/word-counter/",
+      "description":"Cuenta palabras, caracteres y tiempo de lectura de cualquier texto.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -12,18 +43,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>📝 Contador de Palabras</h1>
+
+    <p class="description">
+        Analiza cualquier texto en segundos. Cuenta palabras, caracteres, frases, párrafos y estima el tiempo de lectura de forma automática.
+    </p>
 
     <textarea
         id="text"
-        placeholder="Escribe o pega aquí tu texto..."
-    ></textarea>
+        placeholder="Escribe o pega aquí tu texto..."></textarea>
 
     <div class="stats">
 
@@ -63,6 +102,28 @@
         <button id="copy">📋 Copiar</button>
         <button id="clear">🗑️ Limpiar</button>
     </div>
+
+    <section class="info">
+
+        <h2>¿Qué hace este contador de palabras?</h2>
+
+        <p>
+            Esta herramienta analiza cualquier texto y calcula automáticamente el número de palabras, caracteres, frases y párrafos. También estima el tiempo aproximado que tardará una persona en leer el contenido.
+        </p>
+
+        <h2>¿Para quién es útil?</h2>
+
+        <p>
+            Es ideal para estudiantes, escritores, periodistas, redactores SEO, creadores de contenido y cualquier persona que necesite controlar la longitud de un texto.
+        </p>
+
+        <h2>¿Por qué utilizar esta herramienta?</h2>
+
+        <p>
+            Funciona directamente en tu navegador, no requiere registro y no envía el texto a ningún servidor, por lo que puedes analizar tus documentos de forma rápida y privada.
+        </p>
+
+    </section>
 
 </div>
 

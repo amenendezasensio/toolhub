@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Generador QR | ToolHub</title>
+
+    <meta name="description" content="Genera códigos QR gratis para enlaces, correos electrónicos y teléfonos. Personaliza los colores y descarga el QR en PNG.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/qr-generator/">
+
+    <meta property="og:title" content="Generador QR | ToolHub">
+    <meta property="og:description" content="Genera códigos QR personalizados de forma gratuita.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/qr-generator/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Generador QR",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/qr-generator/",
+      "description":"Genera códigos QR personalizados de forma gratuita.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -14,63 +45,91 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>📱 Generador QR</h1>
 
-   <div class="control">
-    <label for="type">Tipo de contenido</label>
+    <p class="description">
+        Crea códigos QR personalizados para enlaces, direcciones de correo electrónico y números de teléfono. Personaliza los colores y descarga el resultado en formato PNG.
+    </p>
 
-    <select id="type">
-        <option value="url">🌐 URL</option>
-        <option value="email">📧 Email</option>
-        <option value="phone">📞 Teléfono</option>
-    </select>
-</div>
-<div class="control">
+    <div class="control">
 
-    <label>Color del QR</label>
+        <label for="type">Tipo de contenido</label>
 
-    <input
-        type="color"
-        id="darkColor"
-        value="#000000"
-    >
+        <select id="type">
+            <option value="url">🌐 URL</option>
+            <option value="email">📧 Email</option>
+            <option value="phone">📞 Teléfono</option>
+        </select>
 
-</div>
+    </div>
 
-<div class="control">
+    <div class="control">
 
-    <label>Color del fondo</label>
+        <label>Color del QR</label>
 
-    <input
-        type="color"
-        id="lightColor"
-        value="#ffffff"
-    >
+        <input
+            type="color"
+            id="darkColor"
+            value="#000000">
 
-</div>
+    </div>
+
+    <div class="control">
+
+        <label>Color del fondo</label>
+
+        <input
+            type="color"
+            id="lightColor"
+            value="#ffffff">
+
+    </div>
+
     <input
         id="text"
         type="text"
-        placeholder="Escribe un enlace o un texto..."
-    >
+        placeholder="Escribe un enlace o un texto...">
 
-    <div class="controls">
-
-        
-
-    </div>
+    <div class="controls"></div>
 
     <div id="qr"></div>
 
     <div class="buttons">
-    <button id="download">📥 Descargar PNG</button>
-</div>
+        <button id="download">📥 Descargar PNG</button>
+    </div>
+
+    <section class="info">
+
+        <h2>¿Qué es un código QR?</h2>
+
+        <p>
+            Un código QR es un tipo de código de barras bidimensional que permite almacenar información como enlaces web, direcciones de correo electrónico o números de teléfono para acceder a ellos rápidamente desde un dispositivo móvil.
+        </p>
+
+        <h2>¿Cómo funciona esta herramienta?</h2>
+
+        <p>
+            Selecciona el tipo de contenido, introduce la información que quieras convertir en QR, personaliza los colores y genera el código al instante. Después podrás descargarlo como imagen PNG.
+        </p>
+
+        <h2>¿Para qué sirve un código QR?</h2>
+
+        <p>
+            Los códigos QR son muy utilizados en tarjetas de visita, restaurantes, carteles, eventos, redes sociales y campañas de marketing para facilitar el acceso rápido a la información.
+        </p>
+
+    </section>
 
 </div>
 

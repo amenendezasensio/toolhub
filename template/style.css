@@ -16,7 +16,7 @@ body{
 
 .container{
     width:100%;
-    max-width:900px;
+    max-width:700px;
     background:white;
     border-radius:24px;
     padding:40px;
@@ -29,67 +29,113 @@ h1{
     margin-bottom:30px;
 }
 
-label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:600;
-}
-
-input[type="date"]{
-    width:100%;
-    padding:16px;
-    border:2px solid #ddd;
-    border-radius:14px;
-    font-size:16px;
+.passwordBox{
+    display:flex;
+    gap:12px;
     margin-bottom:25px;
 }
 
-input[type="date"]:focus{
-    outline:none;
-    border-color:#4f46e5;
+.passwordBox input{
+    flex:1;
+    padding:16px;
+    font-size:18px;
+    border:2px solid #ddd;
+    border-radius:14px;
+    font-family:Consolas,monospace;
+}
+
+.lengthSection{
+    margin-bottom:25px;
+}
+
+.lengthSection label{
+    display:flex;
+    justify-content:space-between;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+input[type="range"]{
+    width:100%;
+    cursor:pointer;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:14px;
+    margin-bottom:25px;
+}
+
+.options label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+}
+
+.strength{
+    width:100%;
+    height:12px;
+    background:#e5e7eb;
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+#strengthBar{
+    width:0%;
+    height:100%;
+    background:#22c55e;
+    transition:all .3s ease;
+}
+
+#strengthText{
+    text-align:center;
+    font-weight:600;
+    margin-bottom:25px;
 }
 
 button{
-    width:100%;
-    border:none;
-    border-radius:14px;
     background:#4f46e5;
     color:white;
+    border:none;
+    border-radius:14px;
     padding:16px;
     font-size:16px;
     font-weight:600;
     cursor:pointer;
     transition:.2s;
-    margin-bottom:30px;
 }
 
 button:hover{
     transform:translateY(-2px);
 }
 
-.results{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:18px;
+#generate{
+    width:100%;
 }
 
-.card{
+#copy{
+    width:60px;
+    flex-shrink:0;
+}
+
+h2{
+    margin:35px 0 15px;
+}
+
+#history{
+    list-style:none;
+}
+
+#history li{
     background:#f8fafc;
-    border-radius:16px;
-    padding:22px;
-    text-align:center;
-}
-
-.card h2{
-    color:#4f46e5;
-    font-size:28px;
-    margin-bottom:8px;
-    word-break:break-word;
-}
-
-.card p{
-    color:#555;
-    font-weight:600;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:10px;
+    font-family:Consolas,monospace;
+    word-break:break-all;
 }
 .backButton{
     display:inline-block;

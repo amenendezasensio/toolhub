@@ -2,9 +2,40 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Generador UUID | ToolHub</title>
+
+    <meta name="description" content="Genera UUID v4 aleatorios de forma gratuita. Crea uno o cientos de identificadores únicos, cópialos o descárgalos en TXT.">
+
+    <meta name="author" content="ToolHub">
+
+    <link rel="canonical" href="https://toolhub-4bj.pages.dev/tools/uuid-generator/">
+
+    <meta property="og:title" content="Generador UUID | ToolHub">
+    <meta property="og:description" content="Genera UUID v4 aleatorios gratis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toolhub-4bj.pages.dev/tools/uuid-generator/">
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"Generador UUID",
+      "applicationCategory":"DeveloperApplication",
+      "operatingSystem":"Any",
+      "browserRequirements":"Requiere un navegador moderno con JavaScript",
+      "url":"https://toolhub-4bj.pages.dev/tools/uuid-generator/",
+      "description":"Genera UUID v4 aleatorios de forma gratuita.",
+      "isAccessibleForFree":true,
+      "creator":{
+        "@type":"Organization",
+        "name":"ToolHub"
+      }
+    }
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -12,13 +43,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+    <a href="../../index.html" class="backButton">
+        ← Volver a ToolHub
+    </a>
+
     <h1>🆔 Generador UUID</h1>
+
+    <p class="description">
+        Genera identificadores UUID v4 completamente aleatorios para proyectos, bases de datos, APIs y aplicaciones. Copia o descarga todos los UUID en un archivo TXT.
+    </p>
 
     <label for="count">Cantidad</label>
 
@@ -40,8 +80,29 @@
     <textarea
         id="output"
         readonly
-        placeholder="Aquí aparecerán los UUID..."
-    ></textarea>
+        placeholder="Aquí aparecerán los UUID..."></textarea>
+
+    <section class="info">
+
+        <h2>¿Qué es un UUID?</h2>
+
+        <p>
+            Un UUID (Universally Unique Identifier) es un identificador de 128 bits diseñado para ser prácticamente único en cualquier sistema o aplicación.
+        </p>
+
+        <h2>¿Para qué sirve?</h2>
+
+        <p>
+            Los UUID se utilizan en bases de datos, APIs, aplicaciones web, microservicios y sistemas distribuidos para identificar registros sin riesgo de colisiones.
+        </p>
+
+        <h2>¿Qué versión genera esta herramienta?</h2>
+
+        <p>
+            Esta herramienta genera UUID versión 4 (UUID v4), que utilizan números aleatorios y son el estándar más utilizado en el desarrollo de software moderno.
+        </p>
+
+    </section>
 
 </div>
 
