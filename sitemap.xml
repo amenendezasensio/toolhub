@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-    <loc>https://toolhub-4bj.pages.dev/</loc>
-</url>
+    <url>
+        <loc>https://toolhub-4bj.pages.dev/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <url><loc>https://toolhub-4bj.pages.dev/tools/password/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/qr/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/age/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/percentage/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/date-difference/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/word-counter/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/json-formatter/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/uuid/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/unit-converter/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/timer/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/text-converter/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/stopwatch/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/sha256/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/color-picker/</loc></url>
+    <url><loc>https://toolhub-4bj.pages.dev/tools/bmi/</loc></url>
 
 </urlset>

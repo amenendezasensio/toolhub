@@ -359,3 +359,45 @@ footer {
 .featuredButton:hover{
     transform:translateY(-2px);
 }
+.toolLink{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.toolLink:hover{
+    text-decoration:none;
+    color:inherit;
+}
+.seo{
+    max-width:1000px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+.seo h2{
+    margin-top:45px;
+    color:#4f46e5;
+    font-size:32px;
+}
+
+.seo h3{
+    margin-top:30px;
+    font-size:22px;
+}
+
+.seo p{
+    line-height:1.9;
+    color:#555;
+    margin:18px 0;
+}
+
+.seo ul{
+    margin:25px 0;
+    padding-left:22px;
+}
+
+.seo li{
+    margin:12px 0;
+    line-height:1.8;
+}

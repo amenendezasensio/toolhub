@@ -40,84 +40,84 @@ const tools = [
         badge: "⭐ Destacada"
     },
     {
-    name: "Cronómetro",
-    description: "Cronómetro online gratuito.",
-    icon: "⏱️",
-    url: "tools/stopwatch/index.html",
-    category: "Utilidades",
-    badge: "⭐ Destacada"
+        name: "Cronómetro",
+        description: "Cronómetro online gratuito.",
+        icon: "⏱️",
+        url: "tools/stopwatch/index.html",
+        category: "Utilidades",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Temporizador",
-    description: "Cuenta atrás online con minutos y segundos.",
-    icon: "⏲️",
-    url: "tools/timer/index.html",
-    category: "Utilidades",
-    badge: "🆕 Nuevo"
+        name: "Temporizador",
+        description: "Cuenta atrás online con minutos y segundos.",
+        icon: "⏲️",
+        url: "tools/timer/index.html",
+        category: "Utilidades",
+        badge: "🆕 Nuevo"
     },
     {
-    name: "Conversor de Unidades",
-    description: "Convierte longitud, peso y temperatura al instante.",
-    icon: "📏",
-    url: "tools/unit-converter/index.html",
-    category: "Calculadoras",
-    badge: "⭐ Destacada"
+        name: "Conversor de Unidades",
+        description: "Convierte longitud, peso y temperatura al instante.",
+        icon: "📏",
+        url: "tools/unit-converter/index.html",
+        category: "Calculadoras",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Calculadora de Días",
-    description: "Calcula los días entre dos fechas.",
-    icon: "📅",
-    url: "tools/date-difference/index.html",
-    category: "Calculadoras",
-    badge: "🔥 Popular"
+        name: "Calculadora de Días",
+        description: "Calcula los días entre dos fechas.",
+        icon: "📅",
+        url: "tools/date-difference/index.html",
+        category: "Calculadoras",
+        badge: "🔥 Popular"
     },
     {
-    name: "Calculadora de IMC",
-    description: "Calcula tu índice de masa corporal.",
-    icon: "⚖️",
-    url: "tools/bmi/index.html",
-    category: "Salud",
-    badge: "🆕 Nuevo"
+        name: "Calculadora de IMC",
+        description: "Calcula tu índice de masa corporal.",
+        icon: "⚖️",
+        url: "tools/bmi/index.html",
+        category: "Salud",
+        badge: "🆕 Nuevo"
     },
     {
-    name: "Formateador JSON",
-    description: "Valida y formatea archivos JSON.",
-    icon: "📦",
-    url: "tools/json-formatter/index.html",
-    category: "Desarrollo",
-    badge: "⭐ Destacada"
+        name: "Formateador JSON",
+        description: "Valida y formatea archivos JSON.",
+        icon: "📦",
+        url: "tools/json-formatter/index.html",
+        category: "Desarrollo",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Generador de UUID",
-    description: "Genera identificadores UUID v4 aleatorios.",
-    icon: "🆔",
-    url: "tools/uuid/index.html",
-    category: "Desarrollo",
-    badge: "🆕 Nuevo"
+        name: "Generador de UUID",
+        description: "Genera identificadores UUID v4 aleatorios.",
+        icon: "🆔",
+        url: "tools/uuid/index.html",
+        category: "Desarrollo",
+        badge: "🆕 Nuevo"
     },
     {
-    name: "Selector de Colores",
-    description: "Obtén colores en formato HEX, RGB y HSL.",
-    icon: "🎨",
-    url: "tools/color-picker/index.html",
-    category: "Diseño",
-    badge: "⭐ Destacada"
+        name: "Selector de Colores",
+        description: "Obtén colores en formato HEX, RGB y HSL.",
+        icon: "🎨",
+        url: "tools/color-picker/index.html",
+        category: "Diseño",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Convertidor de Texto",
-    description: "Convierte texto a mayúsculas, minúsculas y más.",
-    icon: "🔤",
-    url: "tools/text-converter/index.html",
-    category: "Texto",
-    badge: "⭐ Destacada"
+        name: "Convertidor de Texto",
+        description: "Convierte texto a mayúsculas, minúsculas y más.",
+        icon: "🔤",
+        url: "tools/text-converter/index.html",
+        category: "Texto",
+        badge: "⭐ Destacada"
     },
     {
-    name: "Generador SHA-256",
-    description: "Genera un hash SHA-256 a partir de un texto.",
-    icon: "🔒",
-    url: "tools/sha256/index.html",
-    category: "Seguridad",
-    badge: "⭐ Destacada"
+        name: "Generador SHA-256",
+        description: "Genera un hash SHA-256 a partir de un texto.",
+        icon: "🔒",
+        url: "tools/sha256/index.html",
+        category: "Seguridad",
+        badge: "⭐ Destacada"
     }
 ];
 
@@ -125,20 +125,21 @@ const container = document.getElementById("toolContainer");
 const searchInput = document.getElementById("searchInput");
 const toolCount = document.getElementById("toolCount");
 const categoryCount = document.getElementById("categoryCount");
+const featuredContainer = document.getElementById("featuredTool");
 
 if (toolCount) {
-    toolCount.textContent = tools.filter(tool => tool.url !== "#").length;
+    toolCount.textContent = tools.length;
 }
 
 if (categoryCount) {
     const categories = [...new Set(tools.map(tool => tool.category))];
     categoryCount.textContent = categories.length;
 }
-const featuredContainer = document.getElementById("featuredTool");
 
 if (featuredContainer) {
 
-    const featured = tools.find(tool => tool.badge === "🔥 Popular") || tools[0];
+    const featured =
+        tools.find(tool => tool.badge === "🔥 Popular") || tools[0];
 
     featuredContainer.innerHTML = `
         <div class="featuredCard">
@@ -163,11 +164,14 @@ if (featuredContainer) {
 
 function showTools(search = "", category = "Todas") {
 
+    if (!container) return;
+
     container.innerHTML = "";
 
     const filtered = tools.filter(tool => {
 
-        const matchesSearch = tool.name.toLowerCase().includes(search.toLowerCase());
+        const matchesSearch =
+            tool.name.toLowerCase().includes(search.toLowerCase());
 
         const matchesCategory =
             category === "Todas" || tool.category === category;
@@ -178,19 +182,21 @@ function showTools(search = "", category = "Todas") {
 
     filtered.forEach(tool => {
 
-    container.innerHTML += `
-    <div class="card" onclick="openTool('${tool.url}')">
+        container.innerHTML += `
+            <a href="${tool.url}" class="toolLink" aria-label="${tool.name}">
+                <article class="card">
 
-        ${tool.badge ? `<span class="badge">${tool.badge}</span>` : ""}
+                    ${tool.badge ? `<span class="badge">${tool.badge}</span>` : ""}
 
-        <div class="icon">${tool.icon}</div>
+                    <div class="icon">${tool.icon}</div>
 
-        <h3>${tool.name}</h3>
+                    <h3>${tool.name}</h3>
 
-        <p>${tool.description}</p>
+                    <p>${tool.description}</p>
 
-    </div>
-`;
+                </article>
+            </a>
+        `;
 
     });
 
@@ -198,34 +204,35 @@ function showTools(search = "", category = "Todas") {
 
 let currentCategory = "Todas";
 
-showTools("", currentCategory);
+showTools();
 
-searchInput.addEventListener("input", function () {
-    showTools(this.value, currentCategory);
-});
-function openTool(url) {
+if (searchInput) {
 
-    if (url === "#") {
-        alert("🚧 Esta herramienta estará disponible muy pronto.");
-        return;
-    }
+    searchInput.addEventListener("input", function () {
 
-    window.location.href = url;
+        showTools(this.value, currentCategory);
+
+    });
 
 }
+
 const categoryButtons = document.querySelectorAll(".category");
 
 categoryButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        categoryButtons.forEach(btn => btn.classList.remove("active"));
+        categoryButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
 
         button.classList.add("active");
 
-        currentCategory = button.textContent.replace(/^[^\p{L}]+/u, "").trim();
+        currentCategory = button.textContent
+            .replace(/^[^\p{L}]+/u, "")
+            .trim();
 
-        showTools(searchInput.value, currentCategory);
+        showTools(searchInput ? searchInput.value : "", currentCategory);
 
     });
 
